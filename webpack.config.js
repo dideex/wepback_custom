@@ -18,12 +18,12 @@ module.exports = {
                 include: path.resolve(__dirname, 'src'),
             },
             {
-                test: /\.png$/,
+                test: /\.(jpe?g)|(png)$/,
                 loader: 'url-loader',
                 include: path.resolve(__dirname, 'src'),
             },
             {
-                test: /\.scss$/,
+                test: /\.(css)|(scss)$/,
                 loaders: ['style-loader', 'css-loader', 'sass-loader'],
                 include: path.resolve(__dirname, 'src'),
             },
