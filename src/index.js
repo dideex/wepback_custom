@@ -1,8 +1,12 @@
 import nav from './nav'
-import {top, bottom} from './footer'
+import {footer} from './footer'
 import makeButton from './button'
 import {makeColorStyle} from './button-styles'
 
+const firstButton = makeButton('first button')
+document.body.appendChild(firstButton)
+document.body.appendChild(footer)
+
 nav()
-console.log(top, bottom, makeButton('first button'))
+console.log(top, bottom)
 console.log(makeColorStyle('cyan'))
