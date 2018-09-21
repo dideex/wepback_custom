@@ -7,11 +7,15 @@
     "build": "node_modules\\.bin\\webpack -p",
     "webpack-dev-server": "webpack-dev-server",
     "webpack": "webpack",
-    "dev": "npm run webpack-dev-server -- --env.mode development",
+    "dev": "npm run webpack -- --env.mode development",
+    "start": "npm run webpack-dev-server -- --env.mode development --hot",
     "prod": "npm run webpack -- --env.mode production",
     "dev:debug": "npm run debug -- --env.mode development",
     "prod:debug": "npm run debug -- --env.mode production",
-    "debugthis": "node --inspect --inspect-brk ./src/index.js"
+    "prod:ts": "npm run prod -- --env.presets typescript",
+    "debugthis": "node --inspect --inspect-brk ./src/index.js",
+    "prod:analyze": "npm run prod -- --env.presets analyze",
+    "prod:compress": "npm run prod -- --env.presets compress"
   },
   "author": "DiDex",
   "license": "ISC",
@@ -31,13 +35,15 @@
     "ts-loader": "^4.2.0",
     "url-loader": "^1.0.1",
     "webpack": "^4.8.0",
-    "webpack-bundle-analyzer": "^2.11.1",
+    "webpack-bundle-analyzer": "^3.0.2",
     "webpack-cli": "^2.1.3",
     "webpack-node-externals": "^1.7.2",
     "workbox-webpack-plugin": "^3.2.0"
   },
   "dependencies": {
+    "compression-webpack-plugin": "^2.0.0",
     "d3": "^5.1.0",
+    "typescript": "^3.0.3",
     "webpack-dev-server": "^3.1.8",
     "webpack-merge": "^4.1.4"
   }
