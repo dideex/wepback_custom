@@ -4,7 +4,7 @@ const modeConfig = env => require(`./build-utils/webpack.${env}`)(env)
 const webpackMerge = require('webpack-merge')
 const presetConfig = require('./build-utils/loadPresets')
 
-module.exports = ({mode, presets} = {mode: 'production', presets: []}) => {
+module.exports = ({mode = 'production', presets = []}) => {
   console.log('env', mode)
   return webpackMerge(
     {
